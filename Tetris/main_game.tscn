@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://obudbkfumj6v"]
+
+[ext_resource type="Script" path="res://main_game.gd" id="1_cnyjs"]
+[ext_resource type="PackedScene" uid="uid://nac1si0nbsci" path="res://tetris_board.tscn" id="1_mc0gv"]
+[ext_resource type="PackedScene" uid="uid://eobk5ig53fma" path="res://preview_pane.tscn" id="2_7gkgq"]
+[ext_resource type="AudioStream" uid="uid://dbkrxo73swshm" path="res://unstable_pulse.mp3" id="4_xcnca"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_syum6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylwml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lnnk5"]
+
+[node name="MainGame" type="Node2D"]
+script = ExtResource("1_cnyjs")
+
+[node name="TetrisBoard" parent="." instance=ExtResource("1_mc0gv")]
+position = Vector2(32, 32)
+
+[node name="PreviewPane" parent="." instance=ExtResource("2_7gkgq")]
+position = Vector2(384, 64)
+
+[node name="NextPieceLabel" type="RichTextLabel" parent="."]
+offset_left = 384.0
+offset_top = 32.0
+offset_right = 466.0
+offset_bottom = 55.0
+text = "Next Piece"
+
+[node name="LevelLabel" type="RichTextLabel" parent="."]
+offset_left = 384.0
+offset_top = 192.0
+offset_right = 466.0
+offset_bottom = 215.0
+text = "Level
+"
+
+[node name="LevelBox" type="ColorRect" parent="."]
+offset_left = 384.0
+offset_top = 224.0
+offset_right = 544.0
+offset_bottom = 256.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="LevelBoxLabel" type="RichTextLabel" parent="LevelBox"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 32.0
+bbcode_enabled = true
+
+[node name="ScoreLabel" type="RichTextLabel" parent="."]
+offset_left = 384.0
+offset_top = 288.0
+offset_right = 466.0
+offset_bottom = 311.0
+text = "Score"
+
+[node name="ScoreBox" type="ColorRect" parent="."]
+offset_left = 384.0
+offset_top = 320.0
+offset_right = 544.0
+offset_bottom = 352.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="ScoreBoxLabel" type="RichTextLabel" parent="ScoreBox"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 32.0
+bbcode_enabled = true
+
+[node name="PauseButton" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 432.0
+offset_right = 544.0
+offset_bottom = 464.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_syum6")
+text = "Pause"
+
+[node name="NewGameButton" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 384.0
+offset_right = 544.0
+offset_bottom = 416.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ylwml")
+text = "New Game
+"
+
+[node name="SoundToggle" type="CheckButton" parent="."]
+offset_left = 389.0
+offset_top = 473.0
+offset_right = 543.0
+offset_bottom = 504.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lnnk5")
+button_pressed = true
+text = "Enable Sound"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xcnca")
+volume_db = -7.0
+autoplay = true
+parameters/looping = true
+
+[connection signal="next_piece" from="TetrisBoard" to="." method="_on_tetris_board_next_piece"]
+[connection signal="rows_cleared" from="TetrisBoard" to="." method="_on_tetris_board_rows_cleared"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="toggled" from="SoundToggle" to="." method="_on_sound_toggle_toggled"]

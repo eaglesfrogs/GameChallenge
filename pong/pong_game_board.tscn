@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3lod7fq8xs0s"]
+
+[ext_resource type="Script" path="res://pong_game_board.gd" id="1_3n0rp"]
+[ext_resource type="Texture2D" uid="uid://d4jsnevalc1w4" path="res://texture/dash.png" id="1_6rfqc"]
+[ext_resource type="PackedScene" uid="uid://b28bit81ewfh" path="res://Paddle.tscn" id="2_5wj5y"]
+[ext_resource type="PackedScene" uid="uid://cjtxs22p857k2" path="res://Ball.tscn" id="3_etf6c"]
+
+[node name="PongGameBoard" type="Node2D"]
+script = ExtResource("1_3n0rp")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Line2D" type="Line2D" parent="Background"]
+position = Vector2(0, -9)
+points = PackedVector2Array(576, 0, 576, 648)
+width = 20.0
+texture = ExtResource("1_6rfqc")
+texture_mode = 1
+
+[node name="PlayerScore" type="Label" parent="."]
+offset_left = 496.0
+offset_top = 20.0
+offset_right = 536.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+
+[node name="AILabel" type="Label" parent="."]
+offset_left = 616.0
+offset_top = 20.0
+offset_right = 656.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 64
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="PlayerPaddle" parent="." instance=ExtResource("2_5wj5y")]
+position = Vector2(40, 324)
+movement_mechanism = 0
+
+[node name="AIPaddle" parent="." instance=ExtResource("2_5wj5y")]
+position = Vector2(1112, 324)
+movement_mechanism = 1
+
+[node name="Ball" parent="." instance=ExtResource("3_etf6c")]
+position = Vector2(155, 324)
+
+[connection signal="scored" from="Ball" to="." method="_on_ball_scored"]

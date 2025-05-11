@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3lod7fq8xs0s"]
 
-[ext_resource type="Script" path="res://pong_game_board.gd" id="1_3n0rp"]
+[ext_resource type="Script" uid="uid://bflihryba2ee7" path="res://pong_game_board.gd" id="1_3n0rp"]
 [ext_resource type="Texture2D" uid="uid://d4jsnevalc1w4" path="res://texture/dash.png" id="1_6rfqc"]
 [ext_resource type="PackedScene" uid="uid://b28bit81ewfh" path="res://Paddle.tscn" id="2_5wj5y"]
 [ext_resource type="PackedScene" uid="uid://cjtxs22p857k2" path="res://Ball.tscn" id="3_etf6c"]

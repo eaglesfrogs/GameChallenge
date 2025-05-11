@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://obudbkfumj6v"]
 
-[ext_resource type="Script" path="res://main_game.gd" id="1_cnyjs"]
+[ext_resource type="Script" uid="uid://cscsgfesbktbd" path="res://main_game.gd" id="1_cnyjs"]
 [ext_resource type="PackedScene" uid="uid://nac1si0nbsci" path="res://tetris_board.tscn" id="1_mc0gv"]
 [ext_resource type="PackedScene" uid="uid://eobk5ig53fma" path="res://preview_pane.tscn" id="2_7gkgq"]
 [ext_resource type="AudioStream" uid="uid://dbkrxo73swshm" path="res://unstable_pulse.mp3" id="4_xcnca"]

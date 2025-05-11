@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2rb7jqrb2k0r"]
 
 [ext_resource type="Texture2D" uid="uid://cq2ehe32tgegj" path="res://images/tetris_tile.png" id="1_jxy3w"]
-[ext_resource type="Script" path="res://pieces/tetris_block.gd" id="2_eobpy"]
+[ext_resource type="Script" uid="uid://c7lk5wv4vvn1f" path="res://pieces/tetris_block.gd" id="2_eobpy"]
 
 [node name="TetrisTile" type="Sprite2D"]
 texture = ExtResource("1_jxy3w")

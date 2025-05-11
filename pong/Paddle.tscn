@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b28bit81ewfh"]
 
 [ext_resource type="Texture2D" uid="uid://d15rfnf4uqpmm" path="res://texture/paddle.png" id="1_dde1r"]
-[ext_resource type="Script" path="res://paddle.gd" id="1_f02ko"]
+[ext_resource type="Script" uid="uid://crfbafubir7dx" path="res://paddle.gd" id="1_f02ko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rywf2"]
 size = Vector2(20, 120)

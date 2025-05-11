@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://nac1si0nbsci"]
 
-[ext_resource type="Script" path="res://tetris_board.gd" id="1_naa5i"]
-[ext_resource type="Script" path="res://drop_timer.gd" id="2_h0iqh"]
+[ext_resource type="Script" uid="uid://cmfgbdolcshw5" path="res://tetris_board.gd" id="1_naa5i"]
+[ext_resource type="Script" uid="uid://bkebtpnyiv7w6" path="res://drop_timer.gd" id="2_h0iqh"]
 
 [node name="TetrisBoard" type="Node2D"]
 script = ExtResource("1_naa5i")
